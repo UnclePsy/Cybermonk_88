@@ -38,14 +38,17 @@ app.use(express.json());
 // Express Starter page: http://localhost:8008/
 app.get('/', (req, res) => {
     res.json({ message: 'Hello, World' });
-}
+});
 
 // Express subsciption page: http://localhost:8008/sub/youtube/      
-app.get('/sub/youtube', (req, res) => {
-    res.json({ message: 'Thank you' });
-    console.log('Request Information:');
-    console.log(req.headers);
-    console.log(req.body);
+app.get('/sub/youtube', ({ query: { 'hub.challenge': challenge } }, res) => {
+    console.log(challenge);
+    res.status(200).end(challenge)
+});
+
+app.post(`/sub/youtube/ `, bodyParser.xml(), ({ body: { feed } }, res) => {
+    console.log(feed);
+    res.status(204).end();
 });
 
 // Starts to listen for the port
