@@ -7,6 +7,11 @@ const client = require("./client");
 require("dotenv").config();
 
 //Twitch//
+// Called every time the bot connects to Twitch chat
+let onConnectedHandler = (addr, port) => {
+    console.log(`* Connected to ${addr}:${port}`);
+}
+
 // Register our event handlers (defined below)
 client.on("message", onMessageHandler);
 client.on("connected", onConnectedHandler);
@@ -15,10 +20,6 @@ client.on('redeem', onRedeemHandler);
 // Connect to Twitch:
 client.connect();
 
-// Called every time the bot connects to Twitch chat
-let onConnectedHandler = (addr, port) => {
-    console.log(`* Connected to ${addr}:${port}`);
-}
 
 
 // Express Packages
@@ -46,7 +47,7 @@ app.get('/sub/youtube', ({ query: { 'hub.challenge': challenge } }, res) => {
     res.status(200).end(challenge)
 });
 
-app.post(`/sub/youtube/ `, bodyParser.xml(), ({ body: { feed } }, res) => {
+app.post(`/sub/youtube/ `, ({ body: { feed } }, res) => {
     console.log(feed);
     res.status(204).end();
 });
