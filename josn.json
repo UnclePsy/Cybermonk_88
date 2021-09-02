@@ -1,0 +1,28 @@
+{
+    "badge-info": {
+        "subscriber": "13"
+    },
+    "badges": {
+        "moderator": "1",
+        "subscriber": "12",
+        "sub-gifter": "1"
+    },
+    "color": "#008000",
+    "display-name": "uncle_psy",
+    "emotes": null,
+    "flags": null,
+    "id": "848a3947-b045-4775-ace5-73cb13597e04",
+    "mod": true,
+    "msg-id": "highlighted-message",
+    "room-id": "45863005",
+    "subscriber": true,
+    "tmi-sent-ts": "1614141755124",
+    "turbo": false,
+    "user-id": "150415595",
+    "user-type": "mod",
+    "emotes-raw": null,
+    "badge-info-raw": "subscriber/13",
+    "badges-raw": "moderator/1,subscriber/12,sub-gifter/1",
+    "username": "uncle_psy",
+    "message-type": "chat"
+}

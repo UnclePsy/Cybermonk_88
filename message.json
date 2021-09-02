@@ -1,0 +1,135 @@
+{
+    "channel": "TextChannel" {
+        "type": "text",
+        "deleted": false,
+        "id": '478020870523322394',
+        "name": "générale",
+        "rawPosition": 0,
+        "parentID": '478020870523322393',
+       permissionOverwrites: Collection [Map
+        ] {},
+       topic: null,
+       lastMessageID: '822957160404615178',
+       rateLimitPerUser: 0,
+       lastPinTimestamp: null,
+       guild:
+        Guild {
+          members: [GuildMemberManager
+            ],
+          channels: [GuildChannelManager
+            ],
+          roles: [RoleManager
+            ],
+          presences: [PresenceManager
+            ],
+          voiceStates: [VoiceStateManager
+            ],
+          deleted: false,
+          available: true,
+          id: '478020869893914635',
+          shardID: 0,
+          name: 'Sai\'s Shrine',
+          icon: '0056a208fa2feacbd01a50d109b23908',
+          splash: null,
+          discoverySplash: null,
+          region: 'us-east',
+          memberCount: 6,
+          large: false,
+          features: [],
+          applicationID: null,
+          afkTimeout: 300,
+          afkChannelID: null,
+          systemChannelID: '478020870523322394',
+          embedEnabled: undefined,
+          premiumTier: 0,
+          premiumSubscriptionCount: 0,
+          verificationLevel: 'NONE',
+          explicitContentFilter: 'DISABLED',
+          mfaLevel: 0,
+          joinedTimestamp: 1616207099278,
+          defaultMessageNotifications: 'ALL',
+          systemChannelFlags: [SystemChannelFlags
+            ],
+          maximumMembers: 100000,
+          maximumPresences: null,
+          approximateMemberCount: null,
+          approximatePresenceCount: null,
+          vanityURLCode: null,
+          vanityURLUses: null,
+          description: null,
+          banner: null,
+          rulesChannelID: null,
+          publicUpdatesChannelID: null,
+          preferredLocale: 'en-US',
+          ownerID: '427549991364591617',
+          emojis: [GuildEmojiManager
+            ]
+        },
+       messages:
+        MessageManager {
+          cacheType: [Function: LimitedCollection
+            ],
+          cache: [LimitedCollection
+            ],
+          channel: [Circular
+            ]
+        },
+       nsfw: false,
+       _typing: Map {}
+    },
+    deleted: false,
+    id: '822957160404615178',
+    type: 'DEFAULT',
+    system: false,
+    content: '$test',
+    author:
+     User {
+       id: '427549991364591617',
+       system: null,
+       locale: null,
+       flags: UserFlags { bitfield: 0
+        },
+       username: 'Uncle Psy',
+       bot: false,
+       discriminator: '4553',
+       avatar: 'e2f76e604d3ddadaf66a6bd35cd594bc',
+       lastMessageID: '822957160404615178',
+       lastMessageChannelID: '478020870523322394'
+    },
+    pinned: false,
+    tts: false,
+    nonce: '822957157103173632',
+    embeds: [],
+    attachments: Collection [Map
+    ] {},
+    createdTimestamp: 1616278676845,
+    editedTimestamp: 0,
+    reactions:
+     ReactionManager {
+       cacheType: [Function: Collection
+        ],
+       cache: Collection [Map
+        ] {},
+       message: [Circular
+        ]
+    },
+    mentions:
+     MessageMentions {
+       everyone: false,
+       users: Collection [Map
+        ] {},
+       roles: Collection [Map
+        ] {},
+       _members: null,
+       _channels: null,
+       crosspostedChannels: Collection [Map
+        ] {}
+    },
+    webhookID: null,
+    application: null,
+    activity: null,
+    _edits: [],
+    flags: MessageFlags { bitfield: 0
+    },
+    reference: null
+}
