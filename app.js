@@ -1,12 +1,17 @@
 // Twitch Packages
-const onMessageHandler = require("./command");
-const onRedeemHandler = require('./redeem');
-const client = require("./client");
+const onMessageHandler = require("./twitch/command");
+const onRedeemHandler = require('./twitch/redeem');
+const client = require("./twitch/client");
 
 // Adds env variables
 require("dotenv").config();
 
 //Twitch//
+// Called every time the bot connects to Twitch chat
+let onConnectedHandler = (addr, port) => {
+    console.log(`* Connected to ${addr}:${port}`);
+}
+
 // Register our event handlers (defined below)
 client.on("message", onMessageHandler);
 client.on("connected", onConnectedHandler);
@@ -15,17 +20,10 @@ client.on('redeem', onRedeemHandler);
 // Connect to Twitch:
 client.connect();
 
-// Called every time the bot connects to Twitch chat
-let onConnectedHandler = (addr, port) => {
-    console.log(`* Connected to ${addr}:${port}`);
-}
-
-
 // Express Packages
 const express = require("express");
-// Uncomment morgan stuff if you decide to use it: Lines: 26, 27, and 36. Also if you want info check info link
-//const morgan = require("morgan");  // Yarn add morgan --dev or npm i -d morgan
-// info here: https://www.npmjs.com/package/morgan
+const volleyball = require("volleyball");
+
 
 // Express App
 const app = express();
@@ -33,12 +31,12 @@ const port = process.env.EXPRESS_PORT || 8008; // Add the port to the .env file 
 
 //Express Dependencies 
 app.use(express.json());
-//app.use(morgan('tiny')); // Uncomment if you decide to use morgan
+app.use(volleyball);
 
 // Express Starter page: http://localhost:8008/
 app.get('/', (req, res) => {
     res.json({ message: 'Hello, World' });
-}
+});
 
 // Express subsciption page: http://localhost:8008/sub/youtube/      
 app.get('/sub/youtube', (req, res) => {

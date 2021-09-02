@@ -1,5 +1,5 @@
 const tmi = require("tmi.js");
-const channels = require("./channels.json");
+const channels = require("../json/channels.json");
 require("dotenv").config();
 //Get channel list
 console.log(channels.channels);

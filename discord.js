@@ -1,9 +1,7 @@
 require("dotenv").config();
-const ytFetch = require("./ytFetch");
-const db = require("./db.js");
+const ytFetch = require("./youtube/ytFetch");
+const db = require("./youtube/db.js");
 const cron = require('node-cron');
-
-
 
 const { Client, WebhookClient, MessageEmbed } = require('discord.js');
 
@@ -23,7 +21,6 @@ client.on('ready', () => {
   
   var task = cron.schedule('1 * * * * *',()=>{Announce(client);});
   task.start();
-
 });
 
 
@@ -70,6 +67,7 @@ client.on('message', async (message) => {
 client.on('messageReactionAdd', (reaction, user) => {
   const { name } = reaction.emoji;
   const member = reaction.message.guild.members.cache.get(user.id);
+
   if (reaction.message.id === '738666523408990258') {
     switch (name) {
       case '🍎':
@@ -91,6 +89,7 @@ client.on('messageReactionAdd', (reaction, user) => {
 client.on('messageReactionRemove', (reaction, user) => {
   const { name } = reaction.emoji;
   const member = reaction.message.guild.members.cache.get(user.id);
+
   if (reaction.message.id === '738666523408990258') {
     switch (name) {
       case '🍎':
@@ -108,11 +107,14 @@ client.on('messageReactionRemove', (reaction, user) => {
     }
   }
 });
-function Announce(client){
-const announcementChannel = client.channels.cache.find(channel => channel.id ==="478020870523322394");
-console.log(JSON.stringify(client.channels.cache));
-console.log(announcementChannel);
-announcementChannel.send("it just works");
+
+let Announce = (client) => {
+  const announcementChannel = client.channels.cache.find(channel => channel.id === "478020870523322394");
+  
+  console.log(JSON.stringify(client.channels.cache));
+  console.log(announcementChannel);
+
+  announcementChannel.send("it just works");
 }
 
 client.login(process.env.DISCORD_TOKEN);
